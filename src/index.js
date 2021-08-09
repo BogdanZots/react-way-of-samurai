@@ -2,10 +2,14 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import state from './redux/state.js'
+import {addPost} from './redux/state.js'
+
+addPost('Samurai113')
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App state={state} addPost={addPost}/>
   </React.StrictMode>,
   document.getElementById('root')
 );

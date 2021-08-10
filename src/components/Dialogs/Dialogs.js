@@ -1,6 +1,10 @@
 import React from "react"
 import s from "./Dialogs.module.css"
 import {NavLink} from "react-router-dom"
+import {addNewMessage} from '../../redux/state.js'
+
+
+
 
 function DialogItem(props) {
     return (
@@ -16,6 +20,7 @@ function Message(props) {
 }
 
 function Dialogs(props) {
+    
     return (
         <div className={s.dialogs}>
             <div className={s.dialogsItems}>
@@ -24,6 +29,8 @@ function Dialogs(props) {
             <div className={s.messages}>
                 {props.dialogsMessages.map(item=><Message key={item.id} message={item.message}/>)}
             </div>
+            <textarea  onChange={}  value={}></textarea>
+            <button onClick={addNewMessageUI}>Add message</button>
         </div>
     )
 }

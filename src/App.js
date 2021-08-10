@@ -8,10 +8,10 @@ import {BrowserRouter, Route} from 'react-router-dom';
 import Music from './components/Music/Music';
 import News from './components/News/News';
 import Settings from './components/Settings/Settings';
-import { addPost } from './redux/state';
+import {rerenderEntireTree} from './index.js';
 
 function App(props) {
-    console.log(props.addPost)
+    console.log(props)
     return (
         <BrowserRouter>
             <div className="app-wrapper">
@@ -23,11 +23,16 @@ function App(props) {
                     component={() => <Dialogs
                     key={1}
                     dialogsData={props.state.dialogsPage.dialogsData}
-                    dialogsMessages={props.state.dialogsPage.dialogsMessages}/>}/>
-                <Route path="/profile" render={() => <Profile posts={props.state.profilePage.posts} addPost={props.addPost}/>}/>
+                    dialogsMessages={props.state.dialogsPage.dialogsMessages}
+                    dialogsPage={props.state.dialogsPage}/>}/>
+                <Route
+                    path="/profile"
+                    render={() => <Profile
+                    profilePage={props.state.profilePage}
+                    dispatch={props.dispatch}/>}/>
                 <Route path="/news" component={News}/>
                 <Route path="/Settings" component={Settings}/>
-                <Route path="/Music" component={Music}/>
+                <Route path="/Music" component={Music}/>    
             </div>
         </BrowserRouter>
     );

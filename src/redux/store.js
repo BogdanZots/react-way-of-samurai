@@ -1,6 +1,5 @@
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT'
-const ADD_NEW_MESSAGE = 'ADD-NEW-MESSAGE'
+import {profileReducer} from './profileReducer.js'
+import {messageReducer} from './messageReducer.js'
 
 let posts = [{
         id: 1,
@@ -65,7 +64,7 @@ let store = {
         dialogsPage: {
             dialogsMessages,
             dialogsData,
-            newDialogMessage:''
+            newDialogMessage:'123'
         },
         sidebar: {}
     },
@@ -79,42 +78,28 @@ let store = {
         this._callSubscriber = observer
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newPost = {
-                id: 5,
-                message: this._state.profilePage.newPostText,
-                likeCount: 0
-            }
-            this._state.profilePage.posts.push(newPost)
-            this._state.profilePage.newPostText = ''
-            this._callSubscriber()
-        } else if (action.type === 'UPDATE-NEW-POST-TEXT') {
-            this._state.profilePage.newPostText = action.newText;
-            console.log(this._state.profilePage.newPostText)
-           /*  this._callSubscriber() */
-        } else if (action.type === 'ADD-NEW-MESSAGE') {
-            this._state.dialogsPage.newDialogMessage = action.newMessage
-            console.log(this._state.dialogsPage.newDialogMessage)
-            this._callSubscriber(this._state)
-        }
+     console.log(this._state)
+     /* this._state.profilePage = */ profileReducer(this._state.profilePage,action)
+   /*   this._state.dialogsPage =  */  messageReducer(this._state.dialogsPage,action)
+     this._callSubscriber(this._state)
+     console.log(this._state)
     }
 }
-export const addPostActionCreator = () => {
+/* export const addPostActionCreator = () => {
     return {
-        type: ADD_POST
+         type: ADD_POST 
     }
 }
 export const updateNewPostActionCreator = (text) => {
     return {
-        type: UPDATE_NEW_POST_TEXT,
-        newText: text
+         type: UPDATE_NEW_POST_TEXT,
+        newText: text 
     }
 }
-export const addNewMessage = (newMessage) => {
+export const addNewMessage = (newMessageText) => {
     return {
-        type: ADD_NEW_MESSAGE,
-        newMessage: newMessage
+         type: ADD_NEW_MESSAGE,
+        newMessageText: newMessageText 
     }
-}
-
+} */
 export default store

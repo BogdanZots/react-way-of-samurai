@@ -1,18 +1,24 @@
 import React from 'react'
 import Post from './Post/Post'
 import s from './MyPosts.module.css'
-import {addPostActionCreator,updateNewPostActionCreator} from '../../../redux/state.js'
+/* import {addPostActionCreator,updateNewPostActionCreator} from '../../../redux/state.js' */
 
 let newPostElement = React.createRef()
 
 
 function MyPosts(props) {
+    console.log(props)
     let addPost = ()=>{
-        props.dispatch(addPostActionCreator())
+        props.dispatch({
+            type : "ADD-POST"
+        })
     }
     function onPostChange() {
         let text = newPostElement.current.value
-        props.dispatch(updateNewPostActionCreator(text))
+        props.dispatch({
+            type:'UPDATE-NEW-POST-TEXT',
+            newPostText : text
+        })
     }
     return (
         <div className={s.postsBlock}>
@@ -31,9 +37,7 @@ function MyPosts(props) {
                 </div>
             </div>
             <div className="posts">
-                {props
-                    .posts
-                    .map(item =>< Post message = {
+                {props.posts.map(item =><Post message = {
                         item.message
                     }
                     key = {

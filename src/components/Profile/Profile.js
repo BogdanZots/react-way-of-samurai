@@ -4,7 +4,7 @@ import MyPosts from './MyPosts/MyPosts'
 import s from './Profile.module.css'
 
 function Profile(props) {
-    console.log(props.profilePage.posts)
+    console.log(props)
     return (
         <div className="content">
             <div>
@@ -12,7 +12,7 @@ function Profile(props) {
                     Ava + descr
                 </div>
                 <MyPosts
-                    posts={props.profilePage.posts}
+                    posts={props.profilePage.state.posts}
                     newPostText={props.profilePage.newPostText}
                     dispatch={props.dispatch}/>
             </div>

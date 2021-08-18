@@ -19,7 +19,7 @@ function App(props) {
                 <Route
                     exact
                     path="/dialogs"
-                    render={()=><Dialogs dispatch={props.dispatch} state={props.state.dialogsPage}/>}/>
+                    render={()=><Dialogs dispatch={props.dispatch} state={props.state.messagePage.state}/>}/>
                 <Route
                     path="/profile"
                     render={() => <Profile

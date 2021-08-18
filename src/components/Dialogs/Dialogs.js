@@ -21,11 +21,13 @@ function DialogItem(props) {
 
 function Dialogs(props) {
     console.log('props in dialogs is',props)
+
     function  changeInputValue(e) {
         let text = e.target.value
+        console.log('entered letter',props.newDialogMessage)
         props.dispatch({
             type:'ADD-NEW-MESSAGE',
-            newMessageText:text
+            newDialogMessage:text
         })
     }
     function sendMessage() {

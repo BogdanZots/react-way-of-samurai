@@ -30,7 +30,7 @@ function MyPosts(props) {
                     <textarea
                         onChange={onPostChange}
                         ref={newPostElement}
-                        value={props.newPostElement}/>
+                        value={props.newPostText}/>
                 </div>
                 <div>
                     <button onClick={addPost}>Add button</button>

@@ -1,74 +1,69 @@
-import {profileReducer} from './profileReducer.js'
+/* import {profileReducer} from './profileReducer.js'
 import {messageReducer} from './messageReducer.js'
-
-let posts = [{
-        id: 1,
-        message: 'My first message(Post)',
-        likeCount: '5'
-    },
-    {
-        id: 2,
-        message: 'My second message(Post)',
-        likeCount: '10'
-    },
-    {
-        id: 3,
-        message: 'My third message(Post)',
-        likeCount: '15'
-    }
-]
-let dialogsData = [{
-        id: 1,
-        name: "Dimych"
-    },
-    {
-        id: 2,
-        name: "Igor"
-    },
-    {
-        id: 3,
-        name: "Vlad"
-    },
-    {
-        id: 4,
-        name: "Mark"
-    },
-    {
-        id: 5,
-        name: "Gosha"
-    }
-
-]
-
-let dialogsMessages = [{
-        id: 1,
-        message: 'Test message1'
-    },
-    {
-        id: 2,
-        message: 'Test message2'
-    },
-    {
-        id: 3,
-        message: 'Test message3'
-    },
-]
 
 
 let store = {
     _state: {
         profilePage: {
-            posts,
+            posts : [{
+                id: 1,
+                message: 'My first message(Post)',
+                likeCount: '5'
+            },
+            {
+                id: 2,
+                message: 'My second message(Post)',
+                likeCount: '10'
+            },
+            {
+                id: 3,
+                message: 'My third message(Post)',
+                likeCount: '15'
+            }
+        ],
             newPostText: ''
         },
         dialogsPage: {
-            dialogsMessages,
-            dialogsData,
+            dialogsMessages : [{
+                id: 1,
+                message: 'Test message1'
+            },
+            {
+                id: 2,
+                message: 'Test message2'
+            },
+            {
+                id: 3,
+                message: 'Test message3'
+            },
+        ],
+            dialogsData : [{
+                id: 1,
+                name: "Dimych"
+            },
+            {
+                id: 2,
+                name: "Igor"
+            },
+            {
+                id: 3,
+                name: "Vlad"
+            },
+            {
+                id: 4,
+                name: "Mark"
+            },
+            {
+                id: 5,
+                name: "Gosha"
+            }
+        
+        ],
             newDialogMessage:'123'
         },
         sidebar: {}
     },
-    getState() {
+    getState() { 
         return this._state
     },
     _callSubscriber() {
@@ -79,12 +74,12 @@ let store = {
     },
     dispatch(action) {
      console.log(this._state)
-     /* this._state.profilePage = */ profileReducer(this._state.profilePage,action)
-   /*   this._state.dialogsPage =  */  messageReducer(this._state.dialogsPage,action)
-     this._callSubscriber(this._state)
-     console.log(this._state)
-    }
-}
+     /* this._state.profilePage =  *//* profileReducer(this._state.profilePage,action) */
+     /* this._state.dialogsPage =  */ /* messageReducer(this._state.dialogsPage,action) */
+/*      this._callSubscriber(this._state)
+     console.log(this._state) */
+/*     }
+} */
 /* export const addPostActionCreator = () => {
     return {
          type: ADD_POST 
@@ -102,4 +97,4 @@ export const addNewMessage = (newMessageText) => {
         newMessageText: newMessageText 
     }
 } */
-export default store
+/* export default store  */

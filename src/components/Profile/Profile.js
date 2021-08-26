@@ -1,20 +1,15 @@
 import React from 'react'
-import { updateNewPostText } from '../../redux/store'
-import MyPosts from './MyPosts/MyPosts'
+import MyPostsContainer from './MyPosts/MyPostsContainer'
 import s from './Profile.module.css'
 
-function Profile(props) {
-    console.log(props)
+function Profile() {
     return (
         <div className="content">
             <div>
                 <div className={s.descriptionBlock}>
-                    Ava + descr
+                    Ava + descr1
                 </div>
-                <MyPosts
-                    posts={props.profilePage.state.posts}
-                    newPostText={props.profilePage.newPostText}
-                    dispatch={props.dispatch}/>
+                <MyPostsContainer/>
             </div>
         </div>
     )

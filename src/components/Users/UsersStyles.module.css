@@ -1,0 +1,22 @@
+.userContainer{
+    display: flex;
+}
+.userPhoto{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+img{
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+}
+.userStatus{
+    width: 50%;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.selectedPage{
+    font-size: 18px;
+    font-weight: bold;
+}

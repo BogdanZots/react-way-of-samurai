@@ -12,7 +12,7 @@ function Nav() {
                 <NavLink activeClassName='active' to="/dialogs">Messages</NavLink>
             </div>
             <div className="item">
-                <NavLink activeClassName='active' to="/news">News</NavLink>
+                <NavLink activeClassName='active' to="/users">users</NavLink>
             </div>
             <div className="item">
                 <NavLink activeClassName='active' to="/music">Music</NavLink>

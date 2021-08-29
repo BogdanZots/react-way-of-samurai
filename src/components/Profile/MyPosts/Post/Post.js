@@ -1,13 +1,23 @@
-import React from 'react'
+import React from 'react';
+import PropTypes from 'prop-types';
 
-function Post(props) {
+function Post({ message, likeCount }) {
     return (
-        <div className="post item">
-            <img className="avatarImg" src="https://schoolsw3.com/tryit/avatar.png"/>
-            {props.message}
-            <span> Like {props.likeCount}</span> 
-        </div>
-    )
+      <div className="post item">
+        <img className="avatarImg" src="https://schoolsw3.com/tryit/avatar.png" alt="avatar" />
+        {message}
+        <span>
+          {' '}
+          Like
+          {likeCount}
+        </span>
+      </div>
+    );
 }
 
-export default Post
+Post.propTypes = {
+    message: PropTypes.string.isRequired,
+    likeCount: PropTypes.number.isRequired,
+};
+
+export default Post;

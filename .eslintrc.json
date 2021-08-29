@@ -1,0 +1,52 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "eslint:recommended", 
+        "plugin:import/errors",
+        "plugin:react/recommended",
+        "plugin:jsx-a11y/recommended",
+        "prettier",
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 12,
+        "sourceType": "module"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "import", 
+        "react", 
+        "jsx-a11y", 
+        "react-hooks"
+    ],
+    "rules": {
+        "indent": "off",
+        "no-unused-vars": "off",
+        "no-console": "off",
+        "react/jsx-filename-extension": [1, {
+            "extensions": [".js", ".jsx"]
+        }],
+        "no-use-before-define": "off",
+        "linebreak-style": 0,
+        "import/prefer-default-export": "off",
+        "react-hooks/rules-of-hooks": 2,
+        "react/jsx-uses-react": "off",   
+        "react/jsx-uses-vars":"off",
+        "no-multiple-empty-lines": ["error", { "max": 1, "maxEOF": 0 }],
+        "max-len": ["error", { "code": 120 }],
+        "react/prop-types": 0,
+        "react/jsx-indent": "off",
+        "no-debugger":"off",
+        "import/no-named-as-default": 0
+    }
+}
+

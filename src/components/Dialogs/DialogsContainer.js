@@ -3,9 +3,10 @@ import { connect } from 'react-redux';
 import Dialogs from './Dialogs';
 
 const mapStateTopProps = (state) => {
-    console.log(state);
+    console.log(state.auth.isAuth)
     return {
         messagePage: state.messagePage,
+        isAuth:state.auth.isAuth
     };
 };
 const mapDispatchToProps = (dispatch) => ({

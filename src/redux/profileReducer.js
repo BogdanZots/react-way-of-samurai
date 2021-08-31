@@ -1,3 +1,4 @@
+import { getUserInfo } from "../api/api";
 const ADD_POST = 'ADD-POST';
 const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
@@ -55,3 +56,14 @@ export const profileReducer = (state = initialState, action) => {
         ...state,
     };
 };
+
+export const setUserInfo = (profile) => ({ type: 'SET-USER-PROFILE', profile });
+
+export const setUserInfoThunk = (userId) =>{
+ return function(dispatch){
+    getUserInfo(userId)
+    .then((data) => {
+        dispatch(setUserInfo(data));
+    });
+ }
+}
